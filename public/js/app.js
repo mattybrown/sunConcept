@@ -7,6 +7,7 @@
     story.items = [];
 
     $http.get('/stories').then(function(data){
+      console.log(data.data)
       story.items = data.data;
     });
   }]);
@@ -18,6 +19,5 @@
     $http.get('/users').then(function(data){
       user.items = data.data;
     });
-    console.log(user.items);
   }]);
 })();

@@ -3,13 +3,8 @@
     .row
       %div(ng-repeat="story in story.items")
         %h5
-          {{ story.title }}
+          {{ story.headline }}
         %p
-          {{ story.blurb }}
-  %div(ng-controller="UserController as user")
-    .row
-      %div(ng-repeat="user in user.items")
-        %h5
-          {{ user.name }}
-        %p
-          {{ user.age }}
+          .byline
+            {{ story.author }} - {{ story.created_at | date : 'medium' }}
+          {{ story.body }}
