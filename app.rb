@@ -2,7 +2,7 @@ require 'bundler'
 Bundler.require
 require 'tilt/erb'
 
-class AngularTest < Sinatra::Base
+class SunConcept < Sinatra::Base
 
   get '/' do
     haml :index
