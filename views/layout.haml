@@ -1,0 +1,28 @@
+%html{"ng-app" => "testApp"}
+  %head
+    %link{:href => url('stylesheets/materialize.css'), :rel => "stylesheet", :type => "text/css"}
+    %link{:href => url('stylesheets/style.css'), :rel => "stylesheet", :type => "text/css"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"}
+    %script{:type => "text/javascript", :src => url('js/app.js')}
+
+  %body
+    %script{:type => "text/javascript", :src => "https://code.jquery.com/jquery-2.1.1.min.js"}
+    %script{:type => "text/javascript", :src => url('js/bin/materialize.min.js')}
+
+    %header
+      %nav.top-nav
+        .container
+          .nav-wrapper
+            %h3.page-title
+              The Blenheim Sun
+      %ul#nav-mobile.side-nav.fixed
+        %li.logo
+        %li.search
+        %li.bold
+          %a.waves-effect.waves-red{:href => "News"}= "News"
+
+
+    %main= yield
+
+    %footer

@@ -1,0 +1,15 @@
+.container
+  %div{ "ng-controller" => "StoryController as story" }
+    .row
+      %div(ng-repeat="story in story.items")
+        %h5
+          {{ story.title }}
+        %p
+          {{ story.blurb }}
+  %div(ng-controller="UserController as user")
+    .row
+      %div(ng-repeat="user in user.items")
+        %h5
+          {{ user.name }}
+        %p
+          {{ user.age }}
