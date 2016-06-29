@@ -1,10 +1,47 @@
 .container
-  %div{ "ng-controller" => "StoryController as story" }
-    .row
-      %div(ng-repeat="story in story.items")
-        %h5
-          {{ story.headline }}
-        %p
-          .byline
-            {{ story.author }} - {{ story.created_at | date : 'medium' }}
-          {{ story.body }}
+  .row
+    .col.l8.s12
+      .card
+        .card-image
+          %img.responsive-img.lead-story-img{:src => url('images/koala.jpg')}
+        .card-content
+          %h4.lead-story-headline
+            Koala fur factory opens in Riverlands Estate
+          %p
+            Bacon ipsum dolor amet shoulder fatback venison ham hock ball tip t-bone. Short ribs pancetta landjaeger, prosciutto strip steak doner ham kielbasa rump filet mignon leberkas. Boudin andouille shank prosciutto. Chicken shank shoulder bacon tri-tip chuck ball tip sirloin ham hock. Tail brisket cupim meatloaf jowl sausage pastrami pork chop shank ground round.
+        .card-action
+          %a{:href => "#"}= "Read more..."
+    .col.l4.hide-on-small
+
+      %h5
+        Latest stories
+      .collection
+        %a.collection-item{:href => "#"}= "Ken Ring wrong again"
+        %a.collection-item{:href => "#"}= "Yealands bankrupt!"
+        %a.collection-item{:href => "#"}= "Mayor's affair"
+        %a.collection-item{:href => "#"}= "Theatre to cost another $10m"
+        %a.collection-item{:href => "#"}= "Roundabout claims another life"
+    .col.l4.hide-on-small
+      .ad-space.med-rec
+  .row
+    .col.l4.s12
+      .card
+        .card-image
+          %img.responsive-img.fp-story{:src => url('/images/dinosaurs.jpg')}
+        .card-content
+          %h5
+            Wet, cold & trapped
+          %p Lorem ipsum...
+        .card-action
+          %a{:href => "#"}= "Read more..."
+
+    .col.l4.s12
+      .card
+        .card-image
+          %img.responsive-img.fp-story{:src => url('/images/cat1.jpg')}
+        .card-content
+          %h5
+            This code is evaluated
+          %p And the output is inserted into the document.
+        .card-action
+          %a{:href => "#"}= "Read more..."

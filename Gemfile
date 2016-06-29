@@ -8,6 +8,8 @@ gem 'warden'
 gem 'haml'
 gem 'sass'
 gem 'json'
+gem 'refile'
+gem 'refile-mini_magick'
 
 group :production do
   gem 'pg'

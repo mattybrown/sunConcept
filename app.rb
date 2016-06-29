@@ -6,17 +6,18 @@ require './model'
 class SunConcept < Sinatra::Base
 
   get '/' do
+    @title = "Blenheim Sun online - Our community news"
+    @date = Date.today.strftime '%a %-d %b %Y'
+
     haml :index
   end
 
   get '/stories' do
-    content_type :json
 
     story = Story.all
-    story.to_json
+    @story
   end
   get '/users' do
-    content_type :json
 
   end
 end

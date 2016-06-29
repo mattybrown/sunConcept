@@ -1,28 +1,69 @@
-%html{"ng-app" => "testApp"}
+%html
   %head
     %link{:href => url('stylesheets/materialize.css'), :rel => "stylesheet", :type => "text/css"}
     %link{:href => url('stylesheets/style.css'), :rel => "stylesheet", :type => "text/css"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"}
-    %script{:type => "text/javascript", :src => url('js/app.js')}
-
+    %title= @title
   %body
     %script{:type => "text/javascript", :src => "https://code.jquery.com/jquery-2.1.1.min.js"}
     %script{:type => "text/javascript", :src => url('js/bin/materialize.min.js')}
 
-    %header
-      %nav.top-nav
+  %header
+    .container.valign-wrapper
+      .ad-space.lug#top-left
+      %img.responsive-img#logo{:src => url('images/header-logo-400px.png'), :alt => "The Blenheim Sun online"}
+      .ad-space.lug#top-right
+  #info
+    .container.info
+      #info-wrapper
+        %span#date.center-align
+          = @date
+        %span#view.center-align
+          %a{:href => "#"}= "View paper"
+        %span#weather.center-align
+          Today: Sunny, increasing cloud.
+  .container
+    %nav
+      .nav-wrapper
+        %ul#nav.hide-on-med-and-down
+          %li
+            %a{:href => "#"}="Home"
+          %li
+            %a{:href => "#"}="Births/Deaths"
+          %li
+            %a{:href => "#"}="Classifieds"
+          %li
+            %a{:href => "#"}="About"
+          %li
+            %a{:href => "#"}="Contact"
+          %li
+            %a{:href => "#"}="Advertise"
+  .container
+    .ad-space.leaderboard#top
+  %main= yield
+  
+  .container
+    %footer.page-footer
+      .container
+        .row
+          .col.l6.s12
+            %h5.white-text
+              Footer content
+            %p.white-text
+              We at the Blenheim Sun are commited to accuracy. If you find any factual errors please let us know.
+          .col.l4.offset-l2.s12
+            %h5.white-text
+              Links
+            %ul
+              %li
+                %a.white-text{:href => "#"}= "Link1"
+              %li
+                %a.white-text{:href => "#"}= "Link2"
+              %li
+                %a.white-text{:href => "#"}= "Link3"
+              %li
+                %a.white-text{:href => "#"}= "Link4"
+      .footer-copyright
         .container
-          .nav-wrapper
-            %h4.page-title
-              Your community news
-      %ul#nav-mobile.side-nav.fixed
-        %li.logo
-        %li.search
-        %li.bold
-          %a.waves-effect.waves-red{:href => "News"}= "News"
-
-
-    %main= yield
-
-    %footer
+          &copy The Blenheim Sun
+          = Date.today.strftime '%Y'
